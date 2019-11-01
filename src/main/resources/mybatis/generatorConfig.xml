@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+		PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+			location="D:\soft\apache-maven-3.3.9\maven_home\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
+	<context id="my" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="false"/>
+			<property name="suppressAllComments" value="true"/>
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+						connectionURL="jdbc:mysql://127.0.0.1:3306/pinyougoudb?useUnicode=true&amp;characterEncoding=utf-8&amp;allowMultiQueries=true&amp;useSSL=false&amp;allowMultiQueries=true"
+						userId="root"
+						password="123456"/>
+
+		<!-- model文件配置 -->
+		<javaModelGenerator targetPackage="com.pinyougou.pojo"
+							targetProject="src/main/java">
+			<property name="enableSubPackages" value="true"/>
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+
+		<!-- mapper.xml文件生成配置 -->
+		<sqlMapGenerator targetPackage="com.pinyougou.mapper"
+						 targetProject="src/main/resources">
+			<property name="enableSubPackages" value="true"/>
+		</sqlMapGenerator>
+
+		<!-- mapper接口生成配置 -->
+		<javaClientGenerator targetPackage="com.pinyougou.mapper"
+							 targetProject="src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true"/>
+		</javaClientGenerator>
+
+		<!--<table tableName="CTAS_FEE_BASE" domainObjectName="FeeBase"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+        </table>-->
+
+		<!-- 指定数据库表 -->
+		<table schema="" tableName="tb_address"></table>
+		<table schema="" tableName="tb_areas"></table>
+		<table schema="" tableName="tb_brand"></table>
+		<table schema="" tableName="tb_cities"></table>
+		<table schema="" tableName="tb_content"></table>
+		<table schema="" tableName="tb_content_category"></table>
+		<table schema="" tableName="tb_freight_template"></table>
+		<table schema="" tableName="tb_goods"></table>
+		<table schema="" tableName="tb_goods_desc"></table>
+		<table schema="" tableName="tb_item"></table>
+		<table schema="" tableName="tb_item_cat"></table>
+		<table schema="" tableName="tb_order"></table>
+		<table schema="" tableName="tb_order_item"></table>
+		<table schema="" tableName="tb_pay_log"></table>
+		<table schema="" tableName="tb_provinces"></table>
+		<table schema="" tableName="tb_seckill_goods"></table>
+		<table schema="" tableName="tb_seckill_order"></table>
+		<table schema="" tableName="tb_seller"></table>
+		<table schema="" tableName="tb_specification"></table>
+		<table schema="" tableName="tb_specification_option"></table>
+		<table schema="" tableName="tb_type_template"></table>
+		<table schema="" tableName="tb_user"></table>
+
+	</context>
+</generatorConfiguration>
